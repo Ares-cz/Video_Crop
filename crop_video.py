@@ -39,8 +39,10 @@ def split_video_by_time(input_video_path, output_video_path, start_time, end_tim
     new_clip.write_videofile(output_video_path, codec='libx264', audio_codec='aac')
 
 # Example usage
-input_video_path = 'annotation/DJI_0056.MOV'  # Replace with your video path
-output_video_path = 'annotation/DJI_0056_4650_to_5550.MOV'  # Replace with your desired output path
+input_video_path = 'Path_to_video'  # Replace with your video path
+output_video_path = 'Path_to_save_cropped_video'  # Replace with your desired output path
+
+# Choose a format (frame or time) to perform video segmentation
 
 # Split by frames
 start_frame = 4650
@@ -48,6 +50,7 @@ end_frame = 5550
 split_video_by_frames(input_video_path, output_video_path, start_frame, end_frame)
 
 # Split by time
-# start_time = 150  # in seconds
-# end_time = 200  # in seconds
-# split_video_by_time(input_video_path, output_video_path, start_time, end_time)
+start_time = 150  # in seconds
+end_time = 200  # in seconds
+split_video_by_time(input_video_path, output_video_path, start_time, end_time)
+
